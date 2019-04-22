@@ -705,6 +705,27 @@ void printArray(int arr[], int n)
     cout << "\n"; 
 }  
 
+void leftRotatebyOne(int arr[], int n)
+{
+    int temp = arr[0], i;
+    for (i = 0; i < n - 1; i++)
+        arr[i] = arr[i + 1];
+
+    arr[i] = temp;
+}
+
+void leftRotate(int arr[], int d, int n)
+{
+    for (int i = 0; i < d; i++)
+        leftRotatebyOne(arr, n);
+}
+
+
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+}
 /*functions calling*/
 
 int main()  
@@ -942,4 +963,15 @@ return 0;
   
     cout << "Sorted array is \n"; 
     printArray(arr, n); 
-} 
+}
+int main() 
+{ 
+    int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    bubbleSort(arr, n); 
+    printf("Sorted array: \n"); 
+    printArray(arr, n); 
+    return 0; 
+}
+};
+
